@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vidyadeepa | ವಿದ್ಯಾದೀಪ</title>
+<meta name="description" content="Vidyadeepa – Parents' weekly reading corner activity calendar, DIET Bengaluru Urban">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;700;800&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/vidyadeepa-logo.png">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <img class="h-logo" src="assets/vidyadeepa-logo.png" alt="Vidyadeepa logo">
+      <div>
+        <h1 data-i18n="siteTitle">ವಿದ್ಯಾದೀಪ</h1>
+        <p class="sub" data-i18n="siteSub"></p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="seg lang" role="group" aria-label="Language">
+        <button type="button" data-lang="kn">ಕನ್ನಡ</button>
+        <button type="button" data-lang="en">English</button>
+      </div>
+      <button type="button" id="helpBtn" class="btn ghost-light"><span aria-hidden="true">?</span> <span data-i18n="help"></span></button>
+      <img class="h-logo" src="assets/diet-logo.png" alt="DIET Bangalore Urban logo">
+    </div>
+  </div>
+  <p class="org" data-i18n="org"></p>
+</header>
+
+<main class="wrap">
+  <section class="toolbar">
+    <div class="grade-pick" id="tourGrade">
+      <span class="lbl" data-i18n="chooseGrade"></span>
+      <div class="seg" role="group">
+        <button type="button" data-grade="2-4">2–4</button>
+        <button type="button" data-grade="5-8">5–8</button>
+      </div>
+    </div>
+    <div class="week-nav" id="tourWeekNav">
+      <button type="button" id="lastWeekBtn" class="btn"><span aria-hidden="true">‹</span> <span data-i18n="lastWeek"></span></button>
+      <button type="button" id="thisWeekBtn" class="btn primary" data-i18n="thisWeek"></button>
+      <button type="button" id="nextWeekBtn" class="btn"><span data-i18n="nextWeek"></span> <span aria-hidden="true">›</span></button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="col-main">
+      <section class="days" id="dayStrip"></section>
+      <article class="hero" id="heroCard" tabindex="-1"></article>
+    </div>
+
+    <aside class="col-side">
+      <section class="panel" id="monthPanel">
+        <h2 class="panel-title" data-i18n="monthCal"></h2>
+        <div class="month-head">
+          <button type="button" id="prevMonth" class="icon-btn" aria-label="Previous month">‹</button>
+          <h3 id="monthTitle"></h3>
+          <button type="button" id="nextMonth" class="icon-btn" aria-label="Next month">›</button>
+        </div>
+        <div class="dow" id="dowRow"></div>
+        <div class="month-grid" id="monthGrid"></div>
+        <ul class="month-legend" id="monthLegend"></ul>
+      </section>
+
+      <section class="panel downloads" id="downloadPanel">
+        <button type="button" class="btn block" id="dlCalendarBtn"><span aria-hidden="true">📅</span> <span data-i18n="dlCalendar"></span></button>
+        <button type="button" class="btn block" id="dlFormatBtn"><span aria-hidden="true">📝</span> <span data-i18n="dlFormat"></span></button>
+        <button type="button" class="btn block gold" id="certBtn"><span aria-hidden="true">🏅</span> <span data-i18n="dlCert"></span></button>
+      </section>
+    </aside>
+  </div>
+
+  <section class="wall" id="photoWall">
+    <div class="wall-head">
+      <div>
+        <h2 data-i18n="wallTitle"></h2>
+        <p data-i18n="wallSub"></p>
+      </div>
+      <button type="button" class="btn primary" id="uploadBtn"><span aria-hidden="true">📷</span> <span data-i18n="upload"></span></button>
+    </div>
+    <div class="spots" id="spots"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <img class="f-logo" src="assets/mantra-logo.png" alt="Mantra – Inspire. Enable. Transform.">
+  <p data-i18n="org"></p>
+  <p class="tag" data-i18n="tagline"></p>
+</footer>
+
+<dialog id="modal">
+  <div class="modal-box">
+    <button type="button" class="close" id="modalClose" aria-label="Close">×</button>
+    <div id="modalBody"></div>
+  </div>
+</dialog>
+
+<div id="tour" class="tour" hidden>
+  <div class="tour-hole" id="tourHole"></div>
+  <div class="tour-tip" id="tourTip" role="dialog" aria-live="polite">
+    <p id="tourText"></p>
+    <div class="tour-row">
+      <span id="tourCount"></span>
+      <button type="button" class="btn small" id="tourPrev"></button>
+      <button type="button" class="btn small primary" id="tourNext"></button>
+      <button type="button" class="btn small" id="tourClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
