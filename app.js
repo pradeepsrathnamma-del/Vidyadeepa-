@@ -220,7 +220,7 @@
 
   /* ---------- certificate ---------- */
   var LOGOS = {};
-  [['left', 'assets/vidyadeepa-logo.png'], ['right', 'assets/diet-logo.png']].forEach(function (k) {
+  [['left', 'vidyadeepa-logo.png'], ['right', 'diet-logo.png']].forEach(function (k) {
     var im = new Image();
     im.onload = function () { LOGOS[k[0]] = im; drawCert(); };
     im.src = k[1];
@@ -429,7 +429,11 @@
       '<text x="200" y="160" text-anchor="middle" font-size="44">📷</text></svg>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
-  function allPhotos() { return state.serverPhotos.concat(store.get('photos', [])); }
+  function allPhotos() {
+    var fixed = (window.VD_PHOTOS || []).filter(function (p) { return p && p.file; })
+      .map(function (p) { return { src: p.file, school: p.school || '', date: p.date || '' }; });
+    return fixed.concat(state.serverPhotos, store.get('photos', []));
+  }
   function renderSpots(animate) {
     var spots = $('#spots');
     if (!spots.children.length) {

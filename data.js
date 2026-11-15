@@ -11,6 +11,16 @@ window.VD_CONFIG = {
 };
 
 /* ---------------------------------------------------------------------
+   PHOTO WALL: school activity photos shown to everyone.
+   1. Upload the photo file to GitHub (same place as index.html).
+   2. Add one line below: file name exactly as uploaded, and the school name.
+   Photos change every 10 seconds. Only use photos parents agreed to share.
+   --------------------------------------------------------------------- */
+window.VD_PHOTOS = [
+  // { file: "photo1.jpg", school: "GHPS Example School, Anekal" },
+];
+
+/* ---------------------------------------------------------------------
    WEEKS: one line per week. Dates are YYYY-MM-DD (start and end inclusive).
    acts: which activity (from VD_ACTIVITIES below) each grade group does.
    --------------------------------------------------------------------- */
